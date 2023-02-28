@@ -1,0 +1,39 @@
+﻿<Window x:Class="VPSManger.PopupServerInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VPSManger"
+        mc:Ignorable="d"
+        Title="PopupServerInfo" Height="300" Width="500" WindowStyle="None" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="GridHead" 
+              Grid.Row="0" 
+              Background="#FF4C3154" 
+              MouseDown="GridHead_MouseDown" >
+            <Label x:Name="lblHeader" Content="Server Info" Margin="5,0,0,0" FontWeight="Bold" Foreground="White"/>
+        </Grid>
+        <Grid x:Name="GridBottom"
+              Grid.Row="2"
+              Background="#FFD5BFDC">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Button x:Name="btnSave" Margin="3,3,3,3" Width="60" Height="25" FontSize="13" Content="Save" Background="#FFD73326" Click="btnSave_Click"/>
+                <Button x:Name="btnClose" Margin="3,3,3,3" Width="80" Height="25" FontSize="13" Content="Close" Background="#FF88848F" Click="btnClose_Click" IsCancel="True"/>
+            </StackPanel>
+        </Grid>
+
+        <Label Content="Id" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Content="State" HorizontalAlignment="Left" Margin="10,43,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.242,0.009"/>
+        <Label Content="Region" HorizontalAlignment="Left" Margin="10,76,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.554,3.837"/>
+        <Label Content="ServerScript" HorizontalAlignment="Left" Margin="10,109,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.554,3.837"/>
+        <ComboBox x:Name="cmbRegion" Margin="104,76,0,0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="1,1,1,1" Width="95"/>
+        <TextBox x:Name="txtId" Margin="104,10,0,0" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1,1,1,1" Width="95"/>
+        <TextBox x:Name="txtState" Margin="104,44,0,0" Grid.Row="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="1,1,1,1" Width="95"/>
+        <TextBox x:Name="txtServerScript" Margin="104,109,10,10" Grid.Row="1" TextWrapping="Wrap" BorderThickness="1,1,1,1"/>
+    </Grid>
+</Window>
