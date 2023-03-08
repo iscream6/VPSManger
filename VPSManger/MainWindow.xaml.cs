@@ -71,12 +71,10 @@ namespace VPSManger
             if (WindowState == WindowState.Normal)
             {
                 this.WindowState = WindowState.Maximized;
-                MaxIcon.Kind = PackIconKind.CheckboxMultipleBlankOutline;
             }
             else
             {
                 this.WindowState = WindowState.Normal;
-                MaxIcon.Kind = PackIconKind.Maximize;
             }
         }
 
@@ -326,5 +324,17 @@ namespace VPSManger
         }
 
         #endregion
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (WindowState == WindowState.Normal)
+            {
+                MaxIcon.Kind = PackIconKind.Maximize; 
+            }
+            else
+            {
+                MaxIcon.Kind = PackIconKind.CheckboxMultipleBlankOutline;
+            }
+        }
     }
 }
